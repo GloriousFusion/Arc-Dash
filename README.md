@@ -2,7 +2,7 @@
 
 #### Notes:
 - Run game through scripts/game.py
-- Customize player settings in scripts/settings.py
+- Customize player settings in scripts/settings.py (controls included, player1 weapon = enter key, player2 weapon = space key)
 - Feel free to expand, contribute or recreate (check license for more information)
 
 #### Preview:
