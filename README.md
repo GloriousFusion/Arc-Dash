@@ -4,10 +4,10 @@
 
 #### Preview:
 <p float="left">
-  <img src="previews/01.png" width="480"/>
-  <img src="previews/02.png" width="480"/>
-  <img src="previews/04.png" width="480"/>
-  <img src="previews/05.png" width="480"/>
+  <img src="previews/01.png" width="360"/>
+  <img src="previews/02.png" width="360"/>
+  <img src="previews/04.png" width="360"/>
+  <img src="previews/05.png" width="360"/>
 </p>
 
 #### Task List:
