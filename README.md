@@ -1,6 +1,9 @@
 ### Arc Dash is part of a first term university game project made by GloriousFusion (Loukas K.)
 
-##### <ins> Feel free to expand, contribute or recreate (check license for more information) </ins>
+#### Notes:
+- Run game through scripts/game.py
+- Customize player settings in scripts/settings.py
+- Feel free to expand, contribute or recreate (check license for more information)
 
 #### Preview:
 <p float="left">
