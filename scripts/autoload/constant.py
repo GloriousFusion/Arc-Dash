@@ -107,3 +107,6 @@ BULLET_STATS = {"pulse_blaster_projectile": {"speed": 1200, "force": 18.5},
 BULLET_TIME = 3000
 
 BULLET_HITBOX_OFFSET = (2, 2)
+
+#   Debug (All)
+DEBUG = False

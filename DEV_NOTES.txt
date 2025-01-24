@@ -1,0 +1,35 @@
+One of the quite unique and main systems that I made throughout
+the development of this game was the dictionary structured scene system,
+the reason behind it was due to my struggle
+of understanding how other scripts (such as the player or an object)
+would be able to add other objects or elements that need to be defined according to their sprite groups,
+(since all sprite groups are defined inside the Scene class).
+
+Usually, a lot of developers would simply pass the entire scene in order to get around this issue,
+but personally I didn't really like that approach.
+
+This led me to thinking of a new solution,
+which was simply adding the function add_object onto the scene,
+this would allow me to only pass this function over to the player,
+and call it whenever we want to define/create a new object.
+
+However, as I was slowly adding more types of objects and elements,
+this system got quite more complicated (since different objects
+had different groups, different types or different passed arguments).
+And this was the point where I thought of using a dictionary system
+in order to define each different type of group or object, and allow the developer
+to customize a new added object accordingly through the use of these dictionaries.
+
+I also defined each scene function call as a command (stored inside the commands dictionary)
+as this made sense to me, an entity or object simply sends a command to the scene
+for the scene to perform a certain function.
+
+As I've worked a lot with Godot engine in the past, this was also quite familiar to me
+since in Godot you can do something like $Node.get_node('parameter') or $Node.custom_function() etc.,
+which is a way of setting or getting values from a node.
+But in this instance being only from the scene itself to another "node" (player/object...)
+with a more dictionary-like pythonic syntax, e.g. self.commands["get_entities"]('parameter').
+
+Future wise however, this may not be the most optimal system, it's simple and easy for me to understand,
+but it's also quite time-consuming when it comes to developing a new element or object
+since it has to be defined in all those dictionaries and possibly functions inside the scene.

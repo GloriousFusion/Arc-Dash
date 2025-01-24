@@ -1,5 +1,3 @@
-import pygame.sprite
-
 from scripts.autoload.constant import *
 from scripts.autoload.variable import EntityData
 
@@ -60,6 +58,7 @@ class Player(pygame.sprite.Sprite):
             {"name": weapon["projectile_name"], "texture": weapon["projectile_texture"]})
         self.hand = self.commands["add_object"]("hand", hand["hand_name"], hand["hand_texture"], self.weapon)
 
+
         #   Declare timers
         self.timers = {
             "platform_skip": self.commands["add_timer"]("timer", ENTITY_SKIP_TIME),
@@ -85,7 +84,8 @@ class Player(pygame.sprite.Sprite):
         self.objects.add(self.weapon, self.hand)
 
         ### Debug ###
-        # self.debug_hurtbox = self.commands["add_debugger"]("debug", (self.hurtbox.width, self.hurtbox.height), (self.hurtbox.x, self.hurtbox.y), WHITE)
+        if DEBUG:
+            self.debug_hurtbox = self.commands["add_debugger"]("debug", (self.hurtbox.width, self.hurtbox.height), (self.hurtbox.x, self.hurtbox.y), WHITE)
 
     def input(self):
         keys = pygame.key.get_pressed()
@@ -237,7 +237,8 @@ class Player(pygame.sprite.Sprite):
 
         ### Debug ###
         #   Hurtbox
-        # self.commands["debug"](self.debug_hurtbox, self.debug_hurtbox.set_position, (self.hurtbox.x, self.hurtbox.y))
+        if DEBUG:
+            self.commands["debug"](self.debug_hurtbox, self.debug_hurtbox.set_position, (self.hurtbox.x, self.hurtbox.y))
 
     def set_hurtbox(self):
         return self.rect.copy().inflate(PLAYER_HURTBOX_OFFSET[self.character_name])
@@ -261,4 +262,5 @@ class Player(pygame.sprite.Sprite):
         self.kill()
 
         ### Debug ###
-        # self.debug_hurtbox.kill()
+        if DEBUG:
+            self.debug_hurtbox.kill()

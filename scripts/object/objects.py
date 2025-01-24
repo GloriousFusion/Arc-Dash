@@ -166,7 +166,8 @@ class Bullet(Object):
         }
 
         ### Debug ###
-        # self.debug_hitbox = self.commands["add_debugger"]("debug", (self.hitbox.width, self.hitbox.height), (self.hitbox.x, self.hitbox.y), WHITE)
+        if DEBUG:
+            self.debug_hitbox = self.commands["add_debugger"]("debug", (self.hitbox.width, self.hitbox.height), (self.hitbox.x, self.hitbox.y), WHITE)
 
     def shoot(self, rect, angle, flipped):
         self.rect.center = rect
@@ -197,7 +198,8 @@ class Bullet(Object):
 
         ### Debug ###
         #   Hitbox
-        # self.commands["debug"](self.debug_hitbox, self.debug_hitbox.set_position, (self.hitbox.x, self.hitbox.y))
+        if DEBUG:
+            self.commands["debug"](self.debug_hitbox, self.debug_hitbox.set_position, (self.hitbox.x, self.hitbox.y))
 
     def check(self):
         for collider in self.collisions:
@@ -207,13 +209,15 @@ class Bullet(Object):
 
                 ### Debug ###
                 #   Hitbox
-                # self.debug_hitbox.kill()
+                if DEBUG:
+                    self.debug_hitbox.kill()
                 self.kill()
 
         if not self.timers["bullet_time"].active:
             ### Debug ###
             #   Hitbox
-            # self.debug_hitbox.kill()
+            if DEBUG:
+                self.debug_hitbox.kill()
             self.kill()
 
     def set_hitbox(self):
